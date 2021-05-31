@@ -1,6 +1,13 @@
 package com.covid19army.core.dtos;
 
-public class OtpVerificationRequestDto {
+import java.io.Serializable;
+
+public class OtpVerificationRequestDto  implements Serializable   {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7526227585190885113L;
 
 	private String mobilenumber;
 

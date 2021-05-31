@@ -13,39 +13,13 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-
-
 @Configuration
-public class RabbitMQConfig {
-	@Value("${javainuse.rabbitmq.queue}")
-	String queueName;
-
-	@Value("${javainuse.rabbitmq.exchange}")
-	String exchange;
-
-	@Value("${javainuse.rabbitmq.routingkey}")
-	private String routingkey;
-
-	@Bean
-	Queue queue() {
-		return new Queue(queueName, false);
-	}
-
-	@Bean
-	FanoutExchange exchange() {
-		return new FanoutExchange(exchange);
-	}
-
-	@Bean
-	Binding binding(Queue queue, FanoutExchange exchange) {
-		return  BindingBuilder.bind(queue).to(exchange);
-	}
+public class RabbitMQConfig {		
 
 	@Bean
 	public MessageConverter jsonMessageConverter() {
 		return new Jackson2JsonMessageConverter();
 	}
-
 	
 	@Bean
 	public AmqpTemplate rabbitTemplate(ConnectionFactory connectionFactory) {

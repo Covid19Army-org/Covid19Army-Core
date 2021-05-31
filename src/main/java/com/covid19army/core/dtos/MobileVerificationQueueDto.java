@@ -1,6 +1,14 @@
 package com.covid19army.core.dtos;
 
-public class MobileVerificationQueueDto {
+import java.io.Serializable;
+
+public class MobileVerificationQueueDto implements Serializable  {
+
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4242290079694692722L;
 
 	private long entityid;
 
