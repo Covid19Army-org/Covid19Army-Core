@@ -9,6 +9,8 @@ public class OtpVerificationRequestDto  implements Serializable   {
 	 */
 	private static final long serialVersionUID = -7526227585190885113L;
 
+	private long entityid;
+	
 	private String mobilenumber;
 
 	private int otp;
@@ -28,5 +30,15 @@ public class OtpVerificationRequestDto  implements Serializable   {
 	public void setOtp(int otp) {
 		this.otp = otp;
 	}
+
+	public long getEntityid() {
+		return entityid;
+	}
+
+	public void setEntityid(long entityid) {
+		this.entityid = entityid;
+	}
+	
+	
 	
 }
