@@ -22,6 +22,18 @@ public class GlobalExceptionHandler {
 		return error;
 	}
 
+	@ExceptionHandler(NotAuthorizedException.class)
+	@ResponseStatus(value = HttpStatus.UNAUTHORIZED)
+	public @ResponseBody ExceptionResponse handleNotAuthorized(final NotAuthorizedException exception,
+			final HttpServletRequest request) {
+
+		ExceptionResponse error = new ExceptionResponse();
+		error.setErrorMessage(exception.getMessage());
+		error.callerURL(request.getRequestURI());
+
+		return error;
+	}
+	
 	@ExceptionHandler(Exception.class)
 	@ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
 	public @ResponseBody ExceptionResponse handleException(final Exception exception,
