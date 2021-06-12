@@ -8,7 +8,7 @@
 	</parent>
   <groupId>com.covid19army</groupId>
   <artifactId>Covid19Army-Core</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0</version>
   <name>Covid19Army-Core</name>
   <description>core library</description>
   <properties>
